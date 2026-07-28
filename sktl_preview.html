@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pengajuan SKTL</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body{
+            background:#f4f6f9;
+        }
+
+        .wizard{
+            display:flex;
+            justify-content:space-between;
+            margin-bottom:30px;
+        }
+
+        .wizard .step{
+            flex:1;
+            text-align:center;
+            position:relative;
+        }
+
+        .wizard .step:after{
+            content:"";
+            position:absolute;
+            top:18px;
+            right:-50%;
+            width:100%;
+            height:3px;
+            background:#dee2e6;
+            z-index:0;
+        }
+
+        .wizard .step:last-child:after{
+            display:none;
+        }
+
+        .wizard .circle{
+            width:36px;
+            height:36px;
+            border-radius:50%;
+            background:#0d6efd;
+            color:#fff;
+            margin:auto;
+            line-height:36px;
+            font-weight:bold;
+            position:relative;
+            z-index:1;
+        }
+
+        .section{
+            margin-bottom:25px;
+        }
+
+        .card{
+            border:none;
+            border-radius:12px;
+        }
+
+        textarea{
+            resize:none;
+        }
+
+        .summary td{
+            padding:6px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="container py-5">
+
+<div class="card shadow">
+
+<div class="card-body">
+
+<h2 class="text-center mb-4">
+Pengajuan Surat Keterangan Tanda Lapor (SKTL)
+</h2>
+
+<div class="wizard">
+
+<div class="step">
+<div class="circle">1</div>
+<small>Email</small>
+</div>
+
+<div class="step">
+<div class="circle">2</div>
+<small>Verifikasi</small>
+</div>
+
+<div class="step">
+<div class="circle">3</div>
+<small>Data</small>
+</div>
+
+<div class="step">
+<div class="circle">4</div>
+<small>Konfirmasi</small>
+</div>
+
+<div class="step">
+<div class="circle">5</div>
+<small>Selesai</small>
+</div>
+
+</div>
+
+<!-- STEP 1 -->
+
+<div class="section">
+
+<h4>1. Verifikasi Email</h4>
+
+<p>
+Masukkan email aktif untuk menerima notifikasi proses pengajuan SKTL.
+</p>
+
+<div class="mb-3">
+<label>Email</label>
+<input type="email" class="form-control">
+</div>
+
+<div class="form-check mb-3">
+<input class="form-check-input" type="checkbox">
+<label class="form-check-label">
+Saya memastikan email yang saya masukkan aktif.
+</label>
+</div>
+
+<button class="btn btn-primary">
+Kirim Kode Verifikasi
+</button>
+
+</div>
+
+<hr>
+
+<!-- STEP 2 -->
+
+<div class="section">
+
+<h4>2. Verifikasi OTP</h4>
+
+<div class="row">
+
+<div class="col-md-4">
+
+<label>Kode Verifikasi</label>
+
+<input
+type="text"
+class="form-control"
+placeholder="Masukkan 6 digit kode">
+
+</div>
+
+</div>
+
+<div class="mt-3">
+
+<button class="btn btn-secondary">
+Kirim Ulang
+</button>
+
+<button class="btn btn-success">
+Verifikasi
+</button>
+
+</div>
+
+</div>
+
+<hr>
+
+<!-- STEP 3 -->
+
+<div class="section">
+
+<h4>3. Data Pemohon</h4>
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+<label>Nama Lengkap</label>
+<input type="text" class="form-control">
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Jenis Kelamin</label>
+
+<div>
+
+<div class="form-check form-check-inline">
+
+<input class="form-check-input"
+type="radio"
+name="jk">
+
+<label class="form-check-label">
+Laki-laki
+</label>
+
+</div>
+
+<div class="form-check form-check-inline">
+
+<input class="form-check-input"
+type="radio"
+name="jk">
+
+<label class="form-check-label">
+Perempuan
+</label>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-6 mb-3">
+<label>Tempat Lahir</label>
+<input type="text" class="form-control">
+</div>
+
+<div class="col-md-6 mb-3">
+<label>Tanggal Lahir</label>
+<input type="date" class="form-control">
+</div>
+
+<div class="col-md-6 mb-3">
+<label>Kewarganegaraan</label>
+<input type="text" class="form-control">
+</div>
+
+<div class="col-md-6 mb-3">
+<label>Pekerjaan</label>
+<input type="text" class="form-control">
+</div>
+
+<div class="col-md-6 mb-3">
+<label>Sponsor</label>
+<input type="text" class="form-control">
+</div>
+
+<div class="col-md-6 mb-3">
+<label>Nomor STM</label>
+<input type="text" class="form-control">
+</div>
+
+<div class="col-md-6 mb-3">
+<label>Nomor ITAS / ITAP</label>
+<input type="text" class="form-control">
+</div>
+
+<div class="col-md-6 mb-3">
+<label>Masa Berlaku ITAS / ITAP</label>
+<input type="date" class="form-control">
+</div>
+
+<div class="col-md-6 mb-3">
+<label>Nomor Paspor</label>
+<input type="text" class="form-control">
+</div>
+
+<div class="col-md-6 mb-3">
+<label>Masa Berlaku Paspor</label>
+<input type="date" class="form-control">
+</div>
+
+<div class="col-md-12 mb-3">
+<label>Alamat Tinggal</label>
+<textarea class="form-control" rows="3"></textarea>
+</div>
+
+<div class="col-md-12 mb-3">
+<label>Keterangan</label>
+<textarea class="form-control" rows="3"></textarea>
+</div>
+
+</div>
+
+</div>
+
+<hr>
+
+<!-- STEP 4 -->
+
+<div class="section">
+
+<h4>4. Konfirmasi Data</h4>
+
+<table class="table table-bordered summary">
+
+<tr><td width="35%">Nama</td><td>:</td></tr>
+<tr><td>Jenis Kelamin</td><td>:</td></tr>
+<tr><td>Tempat Lahir</td><td>:</td></tr>
+<tr><td>Tanggal Lahir</td><td>:</td></tr>
+<tr><td>Kewarganegaraan</td><td>:</td></tr>
+<tr><td>Pekerjaan</td><td>:</td></tr>
+<tr><td>Sponsor</td><td>:</td></tr>
+<tr><td>Alamat</td><td>:</td></tr>
+<tr><td>Nomor ITAS / ITAP</td><td>:</td></tr>
+<tr><td>Masa Berlaku ITAS / ITAP</td><td>:</td></tr>
+<tr><td>Nomor Paspor</td><td>:</td></tr>
+<tr><td>Masa Berlaku Paspor</td><td>:</td></tr>
+<tr><td>Nomor STM</td><td>:</td></tr>
+<tr><td>Keterangan</td><td>:</td></tr>
+
+</table>
+
+<div class="form-check">
+
+<input
+class="form-check-input"
+type="checkbox">
+
+<label class="form-check-label">
+Saya menyatakan seluruh data yang saya isi adalah benar.
+</label>
+
+</div>
+
+<br>
+
+<button class="btn btn-success">
+Ajukan Permohonan
+</button>
+
+</div>
+
+<hr>
+
+<!-- STEP 5 -->
+
+<div class="section text-center">
+
+<div class="alert alert-success">
+
+<h3>
+Permohonan Berhasil Dikirim
+</h3>
+
+<p>
+
+Nomor Registrasi
+
+</p>
+
+<h4>
+SKTL-2026-000001
+</h4>
+
+<p>
+
+Status saat ini
+
+<br>
+
+<strong>
+Menunggu Verifikasi Admin
+</strong>
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
